@@ -1,11 +1,8 @@
-# dash_boilerplate
-This repo serves a boilerplate for anyone to quickly setup a Plotly Dash web application with updates from a database
+# Flask and Plotly Dash Web Application Boilerplate
+
+This repo serves as a boilerplate for anyone to quickly setup a Flask server with a Ploty Dash web application on the JHU/APL network.
+
+# Installing Docker and Docker Compose
 
 
-# Instructions 
-
-## Install Docker and Docker Compose (Linux)
-### https://docs.docker.com/compose/install/
-
-* `sudo sh get-docker.sh`
-
+# Building the Dash App
