@@ -50,6 +50,6 @@ dc-down:
 dc-list:
 	docker-compose ps
 
-snap:
+finish:
 	docker rm -f $$(docker ps -a -q)
 	docker rmi -f $$(docker images -a -q)
