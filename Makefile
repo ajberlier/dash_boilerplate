@@ -1,33 +1,55 @@
+
+images:
+	docker images
+
 build: 
+	docker build
+
+run:
+	docker run
+
+list: 
+	docker ps
+
+rmi-all: 
+	docker rmi $$(docker images -a -q)
+
+rm-all:
+	docker rm $$(docker ps -a -q)
+
+kill-all: 
+	docker kill $$(docker ps -a -q)
+
+dc-build: 
 	docker-compose build
 
-up:
+dc-up:
 	docker-compose up -d
 
-up-non-daemon:
+dc-up-non-daemon:
 	docker-compose up
 
-start: 
+dc-start: 
 	docker-compose start
 
-stop:
+dc-stop:
 	docker-compose stop
 
-stop-all:
+dc-stop-all:
 	docker stop $$(docker ps -a -q)
 
-remove-all:
+dc-remove-all:
 	docker rm $$(docker ps -a -q)
 
-kill-all:
-	docker stop $$(docker ps -a -q)
-	docker rm $$(docker ps -a -q)
-
-restart:
+dc-restart:
 	docker-compose stop && docker-compose start
 
-clean: 
+dc-down: 
 	docker-compose down
 
-list:
+dc-list:
 	docker-compose ps
+
+snap:
+	docker rm -f $$(docker ps -a -q)
+	docker rmi -f $$(docker images -a -q)
